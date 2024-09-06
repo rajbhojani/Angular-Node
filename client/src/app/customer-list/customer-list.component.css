@@ -1,0 +1,35 @@
+.customer-list-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  padding: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.customer-table {
+  width: 100%;
+}
+
+.customer-table th,
+.customer-table td {
+  text-align: left;
+}
+
+.customer-table td {
+  padding: 8px;
+}
+
+button {
+  margin-right: 8px;
+}

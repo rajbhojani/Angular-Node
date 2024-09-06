@@ -1,0 +1,133 @@
+<form [formGroup]="customerForm"
+	(ngSubmit)="updateCustomer()">
+	<mat-card>
+		<mat-card-title>Edit Customer</mat-card-title>
+		<mat-card-content>
+			<div>
+				<mat-form-field appearance="fill">
+					<mat-label>Full Name</mat-label>
+					<input matInput
+						id="fullName"
+						formControlName="fullName">
+					<mat-error *ngIf="customerForm.get('fullName')?.invalid && (customerForm.get('fullName')?.dirty || customerForm.get('fullName')?.touched)">
+						<div *ngIf="customerForm.get('fullName')?.errors?.['required']">
+							Full Name is required.
+						</div>
+						<div *ngIf="customerForm.get('fullName')?.errors?.['maxLength']">
+							Full Name cannot exceed 32 characters.
+						</div>
+					</mat-error>
+				</mat-form-field>
+			</div>
+
+
+			<div>
+				<mat-form-field appearance="fill">
+					<mat-label>Mobile Number</mat-label>
+					<input matInput
+						id="mobileNumber"
+						formControlName="mobileNumber">
+					<mat-error *ngIf="customerForm.get('mobileNumber')?.invalid && (customerForm.get('mobileNumber')?.dirty || customerForm.get('mobileNumber')?.touched)">
+						<div *ngIf="customerForm.get('mobileNumber')?.errors?.['required']">
+							Mobile Number is required.
+						</div>
+						<div *ngIf="customerForm.get('mobileNumber')?.errors?.['pattern']">
+							Enter a valid 10-digit mobile number.
+						</div>
+					</mat-error>
+				</mat-form-field>
+			</div>
+
+
+			<div>
+				<mat-form-field appearance="fill">
+					<mat-label>Birthdate</mat-label>
+					<input [matDatepicker]="picker"
+						matInput
+						id="birthdate"
+						formControlName="birthdate">
+					<mat-datepicker-toggle [for]="picker"
+						matSuffix></mat-datepicker-toggle>
+					<mat-datepicker #picker></mat-datepicker>
+					<mat-error *ngIf="customerForm.get('birthdate')?.invalid && (customerForm.get('birthdate')?.dirty || customerForm.get('birthdate')?.touched)">
+						<div *ngIf="customerForm.get('birthdate')?.errors?.['required']">
+							Birthdate is required.
+						</div>
+					</mat-error>
+				</mat-form-field>
+			</div>
+
+
+			<div>
+				<mat-form-field appearance="fill">
+					<mat-label>Gender</mat-label>
+					<mat-select id="gender"
+						formControlName="gender">
+						<mat-option value>Select Gender</mat-option>
+						<mat-option value="1">Male</mat-option>
+						<mat-option value="2">Female</mat-option>
+					</mat-select>
+					<mat-error *ngIf="customerForm.get('gender')?.invalid && (customerForm.get('gender')?.dirty || customerForm.get('gender')?.touched)">
+						<div *ngIf="customerForm.get('gender')?.errors?.['required']">Gender is required.</div>
+					</mat-error>
+				</mat-form-field>
+			</div>
+
+
+			<div>
+				<mat-form-field appearance="fill">
+					<mat-label>Address</mat-label>
+					<input matInput
+						id="address"
+						formControlName="address">
+					<mat-error *ngIf="customerForm.get('address')?.invalid && (customerForm.get('address')?.dirty || customerForm.get('address')?.touched)">
+						<div *ngIf="customerForm.get('address')?.errors?.['required']">
+							Address is required.
+						</div>
+						<div *ngIf="customerForm.get('address')?.errors?.['maxLength']">
+							Address cannot exceed 124 characters.
+						</div>
+					</mat-error>
+				</mat-form-field>
+			</div>
+
+
+			<div>
+				<mat-form-field appearance="fill">
+					<mat-label>Landmark</mat-label>
+					<input matInput
+						id="landmark"
+						formControlName="landmark">
+				</mat-form-field>
+			</div>
+
+
+			<div>
+				<mat-form-field appearance="fill">
+					<mat-label>Pincode</mat-label>
+					<input matInput
+						id="pincode"
+						formControlName="pincode">
+					<mat-error *ngIf="customerForm.get('pincode')?.invalid && (customerForm.get('pincode')?.dirty || customerForm.get('pincode')?.touched)">
+						<div *ngIf="customerForm.get('pincode')?.errors?.['required']">
+							Pincode is required.
+						</div>
+						<div *ngIf="customerForm.get('pincode')?.errors?.['pattern']">
+							Enter a valid 6-digit pincode.
+						</div>
+					</mat-error>
+				</mat-form-field>
+			</div>
+
+
+			<div>
+				<button [disabled]="customerForm.invalid"
+					mat-raised-button
+					color="primary"
+					type="submit">
+					Update Customer
+				</button>
+			</div>
+		</mat-card-content>
+	</mat-card>
+</form>

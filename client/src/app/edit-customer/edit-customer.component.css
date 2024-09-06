@@ -1,0 +1,29 @@
+mat-card {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+mat-error {
+  color: #f44336;
+}
+button {
+  margin-top: 16px;
+}
+
+input[matInput],
+mat-select {
+  font-size: 16px;
+}
+.mat-form-field-appearance-fill {
+  padding: 8px;
+}
+mat-card-content {
+  padding: 16px;
+}

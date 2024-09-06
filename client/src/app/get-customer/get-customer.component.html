@@ -1,0 +1,94 @@
+<mat-card class="customer-detail-container">
+	<mat-card-header>
+		<mat-card-title>Customer Details</mat-card-title>
+	</mat-card-header>
+	<mat-card-content>
+		<div *ngIf="customer">
+			<div>
+				<mat-form-field appearance="fill">
+					<mat-label>ID</mat-label>
+					<input [value]="customer.id"
+						matInput
+						readonly>
+				</mat-form-field>
+			</div>
+
+
+			<div>
+				<mat-form-field appearance="fill">
+					<mat-label>Name</mat-label>
+					<input [value]="customer.fullName"
+						matInput
+						readonly>
+				</mat-form-field>
+			</div>
+
+
+			<div>
+				<mat-form-field appearance="fill">
+					<mat-label>Mobile Number</mat-label>
+					<input [value]="customer.mobileNumber"
+						matInput
+						readonly>
+				</mat-form-field>
+			</div>
+
+
+			<div>
+				<mat-form-field appearance="fill">
+					<mat-label>Birthdate</mat-label>
+					<input [value]="customer.birthdate | date:'shortDate'"
+						matInput
+						readonly>
+				</mat-form-field>
+			</div>
+
+
+			<div>
+				<mat-form-field appearance="fill">
+					<mat-label>Gender</mat-label>
+					<input [value]="customer.gender === 1 ? 'Male' : 'Female'"
+						matInput
+						readonly>
+				</mat-form-field>
+			</div>
+
+
+			<div>
+				<mat-form-field appearance="fill">
+					<mat-label>Address</mat-label>
+					<input [value]="customer.address"
+						matInput
+						readonly>
+				</mat-form-field>
+			</div>
+
+
+			<div>
+				<mat-form-field appearance="fill">
+					<mat-label>Landmark</mat-label>
+					<input [value]="customer.landmark"
+						matInput
+						readonly>
+				</mat-form-field>
+			</div>
+
+
+			<div>
+				<mat-form-field appearance="fill">
+					<mat-label>Pincode</mat-label>
+					<input [value]="customer.pincode"
+						matInput
+						readonly>
+				</mat-form-field>
+			</div>
+		</div>
+	</mat-card-content>
+	<mat-card-actions>
+		<button (click)="goToEdit()"
+			mat-raised-button
+			color="primary">
+			Edit Details
+		</button>
+	</mat-card-actions>
+</mat-card>

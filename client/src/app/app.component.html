@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+	<button *ngIf="showBackButton"
+		(click)="goBack()"
+		mat-icon-button>
+		<mat-icon>arrow_back</mat-icon>
+	</button>
+	<span>Customer Management</span>
+	<span class="spacer"></span>
+	<button *ngIf="showButtons"
+		(click)="goToAddCustomer()"
+		mat-button>
+		Add Customer
+	</button>
+	<button *ngIf="showButtons"
+		(click)="goToChangePassword()"
+		mat-button>
+		Change Password
+	</button>
+	<button *ngIf="showButtons"
+		(click)="logout()"
+		mat-button>
+		Logout
+	</button>
+</mat-toolbar>
+<router-outlet></router-outlet>

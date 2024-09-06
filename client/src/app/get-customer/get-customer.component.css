@@ -1,0 +1,30 @@
+.customer-detail-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  padding: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+mat-card-content {
+  padding: 16px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+}
+
+button {
+  margin-top: 16px;
+}

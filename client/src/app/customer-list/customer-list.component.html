@@ -1,0 +1,62 @@
+<mat-card class="customer-list-container">
+	<mat-card-header>
+		<mat-card-title>Customer List</mat-card-title>
+	</mat-card-header>
+
+
+
+	<mat-card-content>
+		<table [dataSource]="customers"
+			mat-table
+			class="customer-table">
+			<ng-container matColumnDef="id">
+				<th *matHeaderCellDef
+					mat-header-cell>
+					ID
+				</th>
+				<td *matCellDef="let customer"
+					mat-cell>
+					{{ customer.id }}
+				</td>
+			</ng-container>
+
+
+
+			<ng-container matColumnDef="fullName">
+				<th *matHeaderCellDef
+					mat-header-cell>
+					Name
+				</th>
+				<td *matCellDef="let customer"
+					mat-cell>
+					{{ customer.fullName }}
+				</td>
+			</ng-container>
+
+
+
+			<ng-container matColumnDef="actions">
+				<th *matHeaderCellDef
+					mat-header-cell>
+					Actions
+				</th>
+				<td *matCellDef="let customer"
+					mat-cell>
+					<button (click)="goToDetail(customer.id)"
+						mat-button>
+						Details
+					</button>
+				</td>
+			</ng-container>
+
+
+
+			<tbody>
+				<tr *matHeaderRowDef="displayedColumns"
+					mat-header-row></tr>
+				<tr *matRowDef="let row; columns: displayedColumns;"
+					mat-row></tr>
+			</tbody>
+		</table>
+	</mat-card-content>
+</mat-card>
